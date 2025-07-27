@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship & Career Club - Your Path to Professional Success</title>
+    <meta name="description" content="Join the Internship & Career Club to unlock exclusive opportunities, mentorship, and resources for tech, engineering, and business careers.">
+    <meta name="keywords" content="internships, career opportunities, tech careers, engineering jobs, mentorship, skill development, job fairs, resume workshops, interview preparation, student club, Visakhapatnam">
+    <meta name="author" content="Internship & Career Club Team">
+    <meta property="og:title" content="Internship & Career Club - Unlock Your Future">
+    <meta property="og:description" content="Your pathway to internships and career success starts here. Explore opportunities in tech, engineering, and more.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/0F172A/F8FAFC?text=Internship+Club+Social+Share">
+    <meta property="og:url" content="YOUR_WEBSITE_URL">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-bg: #0F172A;
+            --section-bg-cards: #1E293B;
+            --text-light-gray: #E2E8F0;
+            --hero-headline: #F8FAFC;
+            --hero-subheading: #CBD5E1;
+            --section-headings: #FFD700; /* Amber for headings to align with accent colors */
+            --stream-card-text: #93C5FD;
+            --stream-card-hover-text: #BFDBFE;
+            --discover-item-text: #CBD5E1;
+            --join-us-form-heading: #93C5FD;
+            --footer-text: #94A3B8;
+            --copyright-text: #64748B;
+            --accent-amber: #FACC15; /* Amber 400 */
+            --accent-amber-hover: #FDE047; /* Amber 300 */
+            --accent-indigo: #4F46E5; /* Indigo 600 */
+            --accent-indigo-hover: #6366F1; /* Indigo 500 */
+            --accent-blue: #60A5FA; /* Blue 400 */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-light-gray);
+            line-height: 1.6;
+            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* --- Hero Section (Image/Poster) --- */
+        .hero-poster {
+            width: 100%;
+            height: 100vh; /* Maintain full viewport height */
+            background-color: var(--primary-bg); /* Fallback background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .hero-poster img {
+            width: auto; /* Allow width to adjust based on height */
+            height: 100%; /* Make image fill height of container */
+            max-width: 100%; /* Ensure image doesn't overflow horizontally */
+            object-fit: contain; /* Crucial: Make full image visible, adding letterboxing if aspect ratio differs */
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-poster:hover img {
+            transform: scale(1.02);
+        }
+
+        .hero-overlay-text {
+            position: absolute;
+            bottom: 5%; /* Adjust as needed */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            color: var(--hero-headline);
+            padding: 0.8rem 2rem;
+            border-radius: 9999px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            opacity: 1; /* Always visible to indicate clickability */
+            transition: background-color 0.3s ease;
+            text-align: center;
+            white-space: nowrap; /* Prevent text wrapping */
+            z-index: 10; /* Ensure it's above other hero content */
+        }
+
+        .hero-overlay-text:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-content-side {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(30, 41, 59, 0.8); /* Darker Slate with transparency */
+            color: var(--text-light-gray);
+            padding: 1.5rem 1.2rem;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 280px; /* Limit width */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            z-index: 5; /* Below overlay text but above image */
+            opacity: 0; /* Hidden by default */
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .hero-poster:hover .hero-content-side {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .hero-content-side h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-amber);
+            margin-bottom: 0.8rem;
+        }
+
+        .hero-content-side p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .hero-content-left {
+            left: 5%;
+        }
+
+        .hero-content-right {
+            right: 5%;
+        }
+
+
+        /* --- General Section Styling --- */
+        section {
+            padding: 4rem 1rem; /* More generous padding */
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.5rem; /* Slightly larger headings */
+            font-weight: 800; /* Extra bold for impact */
+            color: var(--section-headings);
+            margin-bottom: 2.5rem; /* More space below headings */
+        }
+
+        /* --- Stream Section --- */
+        .stream-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Adjusted min-width for better fit */
+            gap: 2rem; /* Increased gap */
+            padding: 1rem 0;
+        }
+
+        .stream-card {
+            background-color: var(--section-bg-cards);
+            border-radius: 12px;
+            padding: 2rem 1rem; /* Increased padding */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+            color: var(--stream-card-text);
+            text-decoration: none;
+        }
+
+        .stream-card:hover {
+            transform: translateY(-5px) scale(1.02); /* More noticeable hover */
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Larger shadow on hover */
+            background-color: var(--primary-bg);
+            color: var(--stream-card-hover-text);
+        }
+
+        .stream-card i {
+            font-size: 3rem; /* Larger icons */
+            margin-bottom: 1rem;
+            color: var(--accent-blue);
+        }
+
+        .stream-card h3 {
+            font-size: 1.25rem; /* Larger card titles */
+            font-weight: 700;
+        }
+
+        /* --- Games at Our Stall Section --- */
+        .games-section h3 {
+            font-size: 1.8rem; /* Larger subheadings */
+            font-weight: 700;
+            color: var(--stream-card-text);
+            margin-top: 3rem; /* More top margin */
+            margin-bottom: 2rem; /* More bottom margin */
+            text-align: center;
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.8rem; /* Increased gap */
+            padding: 1rem 0;
+        }
+
+        .game-box {
+            background-color: var(--section-bg-cards);
+            border-radius: 12px;
+            padding: 2rem 1.5rem; /* Increased padding */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            aspect-ratio: 1 / 1; /* Make it square */
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 5px 9px rgba(0, 0, 0, 0.12);
+            color: var(--stream-card-text);
+        }
+
+        .game-box:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 18px rgba(0, 0, 0, 0.25);
+            background-color: var(--primary-bg);
+            color: var(--stream-card-hover-text);
+        }
+
+        .game-box i {
+            font-size: 3rem; /* Larger icons */
+            margin-bottom: 1rem;
+            color: var(--accent-blue);
+        }
+
+        .game-box h4 {
+            font-size: 1.2rem; /* Larger game titles */
+            font-weight: 600;
+        }
+
+        .rewards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.8rem; /* Increased gap */
+            padding: 1rem 0;
+        }
+
+        .reward-box {
+            background-color: var(--section-bg-cards);
+            border-radius: 12px;
+            padding: 1.8rem; /* Increased padding */
+            text-align: left;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: var(--discover-item-text);
+        }
+
+        .reward-box h4 {
+            font-size: 1.3rem; /* Larger reward titles */
+            font-weight: 600;
+            color: var(--accent-amber);
+            margin-bottom: 0.6rem;
+        }
+
+        .reward-box p {
+            font-size: 1rem; /* Adjusted font size */
+        }
+
+        /* Expanded Game Box Overlay */
+        .game-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .game-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .expanded-game-content {
+            background-color: var(--section-bg-cards);
+            border-radius: 12px;
+            padding: 2.5rem; /* More padding */
+            max-width: 95%; /* Slightly wider */
+            max-height: 90%;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .game-overlay.active .expanded-game-content {
+            transform: scale(1);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1.2rem;
+            background: none;
+            border: none;
+            font-size: 2.2rem; /* Larger close button */
+            color: var(--text-light-gray);
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            color: var(--accent-amber);
+        }
+
+        .expanded-game-content h3 {
+            font-size: 2.2rem; /* Larger title */
+            color: var(--accent-amber);
+            margin-bottom: 1.2rem;
+            text-align: center;
+        }
+
+        .expanded-game-content p {
+            margin-bottom: 1.8rem; /* More space */
+            color: var(--discover-item-text);
+            text-align: justify;
+            font-size: 1.1rem; /* Larger text */
+            line-height: 1.7;
+        }
+
+        .expanded-game-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1.8rem; /* More space */
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .expanded-game-content .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-top: 1.5rem; /* Add space above video */
+        }
+
+        .expanded-game-content .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: var(--section-bg-cards);
+            padding: 3rem 1rem; /* More padding */
+            border-top-left-radius: 30px;
+            color: var(--footer-text);
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem; /* Slightly more space */
+            color: var(--footer-text);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-link i {
+            font-size: 1.3rem; /* Slightly larger icons */
+            color: var(--accent-indigo);
+        }
+
+        .social-link:hover {
+            color: var(--accent-indigo-hover);
+            transform: translateY(-2px);
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+            font-size: 1rem; /* Adjusted font size */
+        }
+
+        .copyright {
+            margin-top: 2.5rem; /* More margin */
+            font-size: 0.95rem; /* Adjusted font size */
+            color: var(--copyright-text);
+        }
+
+        /* --- Responsive Design --- */
+        @media (min-width: 640px) {
+            .hero-poster {
+                height: 90vh; /* Adjust height for larger screens */
+            }
+
+            section {
+                padding: 5rem 1rem;
+            }
+
+            section h2 {
+                font-size: 3rem;
+            }
+
+            .stream-grid {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            }
+
+            .game-grid {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            }
+
+            .rewards-grid {
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            }
+
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .hero-poster {
+                height: 80vh; /* Adjust height for tablets */
+            }
+
+            section {
+                padding: 6rem 1rem;
+            }
+
+            section h2 {
+                font-size: 3.5rem;
+            }
+
+            .stream-grid {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            }
+
+            .game-grid {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            }
+
+            .rewards-grid {
+                grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            }
+
+            .hero-content-side {
+                opacity: 1; /* Make visible on medium screens and up */
+                visibility: visible;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hero-poster {
+                height: 70vh; /* Adjust height for large desktops */
+            }
+
+            section {
+                padding: 7rem 1rem;
+            }
+
+            section h2 {
+                font-size: 4rem;
+            }
+
+            .stream-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+
+            .game-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+
+            .rewards-grid {
+                grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section with Image/Poster -->
+    <div class="hero-poster" id="heroPoster">
+        <img src="poster.jpeg" alt="Internship and Career Club Welcome Poster">
+        <!-- Content on left and right sides of the poster -->
+        <div class="hero-content-side hero-content-left">
+            <h3>Internship Opportunities</h3>
+            <p>Discover roles in Tech, Engineering, and various industries tailored for students.</p>
+        </div>
+        <div class="hero-content-side hero-content-right">
+            <h3>Career Growth</h3>
+            <p>Access mentorship, skill-building workshops, and exclusive job fair connections.</p>
+        </div>
+        <div class="hero-overlay-text">Explore Games</div>
+    </div>
+
+    <main id="mainContent">
+        <hr>
+
+        <section class="games-section" id="games-section">
+            <div class="container">
+                <h2>Games at Our Stall</h2>
+
+                <h3>Logic Games</h3>
+                <div class="game-grid">
+                    <div class="game-box" data-game="LinkedInHunt">
+                        <i class="fas fa-th-large"></i>
+                        <h4>LinkedIn Hunt</h4>
+                    </div>
+                    <div class="game-box" data-game="riddle">
+                        <i class="fas fa-lightbulb"></i>
+                        <h4>Story Stack</h4>
+                    </div>
+                    <div class="game-box" data-game="chess">
+                        <i class="fas fa-chess-knight"></i>
+                        <h4>Guess the Dream Job</h4>
+                    </div>
+                    <!-- <div class="game-box" data-game="code_debug">
+                        <i class="fas fa-bug"></i>
+                        <h4>Code Debugging Challenge</h4>
+                    </div> -->
+                </div>
+
+                <h3>Fun Games</h3>
+                <div class="game-grid">
+                    <div class="game-box" data-game="trivia">
+                        <i class="fas fa-question-circle"></i>
+                        <h4>Tongue Twisters</h4>
+                    </div>
+                    <div class="game-box" data-game="guess_logo">
+                        <i class="fas fa-building"></i>
+                        <h4>Doodle Disaster</h4>
+                    </div>
+                    <div class="game-box" data-game="word_search">
+                        <i class="fas fa-search"></i>
+                        <h4>Qucik Digits</h4>
+                    </div>
+                    <div class="game-box" data-game="typing_speed">
+                        <i class="fas fa-keyboard"></i>
+                        <h4>Rubix Cube</h4>
+                    </div>
+                    <div class="game-box" data-game="typing_speed">
+                        <i class="fas fa-keyboard"></i>
+                        <h4>Paper Cups</h4>
+                    </div>
+                </div>
+
+                <h3>Rewards</h3>
+                <div class="rewards-grid">
+                    <div class="reward-box">
+                        <h4>Event Opportunities</h4>
+                        <p>Join and showcase your skills in our upcoming events.</p>
+                    </div>
+                    <div class="reward-box">
+                        <h4>Linked Account Help</h4>
+                        <p>Get tips to optimize your linked accounts.</p>
+                    </div>
+                    <div class="reward-box">
+                        <h4>Featured Post Tags</h4>
+                        <p>Be highlighted on our club page with special tags.</p>
+                    </div>
+                    <div class="reward-box">
+                        <h4>Starter Kit & Guidance</h4>
+                        <p>Receive curated resources and expert advice.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expanded Game Box Overlay -->
+        <div class="game-overlay" id="gameOverlay">
+            <div class="expanded-game-content" id="expandedGameContent">
+                <button class="close-btn" id="closeGameOverlay">×</button>
+                <h3 id="expandedGameName"></h3>
+                <img id="expandedGameImage" src="" alt="Game Image">
+                <p id="expandedGameInstructions"></p>
+                <div class="video-container">
+                    <iframe id="expandedGameVideo" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <!-- <div class="social-links">
+                <a href="https://wa.me/YOURPHONENUMBER" target="_blank" class="social-link">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="https://linkedin.com/company/YOURCOMPANY" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div> -->
+            <div class="contact-info">
+                <p>Email: internshipncoclub@sgcrguktsklm.org.in </p>
+                <p>Phone: +91 9966800756</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2025 Internship & Career Club. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const gameBoxes = document.querySelectorAll('.game-box');
+        const gameOverlay = document.getElementById('gameOverlay');
+        const closeGameOverlayBtn = document.getElementById('closeGameOverlay');
+        const expandedGameName = document.getElementById('expandedGameName');
+        const expandedGameImage = document.getElementById('expandedGameImage');
+        const expandedGameInstructions = document.getElementById('expandedGameInstructions');
+        const expandedGameVideo = document.getElementById('expandedGameVideo');
+        const heroPoster = document.getElementById('heroPoster');
+        const gamesSection = document.getElementById('games-section'); // Get the games section
+
+        heroPoster.addEventListener('click', () => {
+            // Scroll to the games section
+            gamesSection.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        const gamesData = {
+            LinkedInHunt: {
+                name: "LinkedIn Hunt",
+                instructions: `
+                    Welcome to LinkedIn Hunt! Sharpen your networking skills.
+                    <br><br>
+                    <strong>How to Play:</strong>
+                    <ul>
+                        <li>You will be given a set of LinkedIn profiles.</li>
+                        <li>Your task is to find specific information or connections within those profiles.</li>
+                        <li>Points are awarded for speed and accuracy.</li>
+                    </ul>
+                    <strong>Tips for Success:</strong>
+                    <ul>
+                        <li>Pay attention to keywords in job descriptions.</li>
+                        <li>Look for common connections or alma maters.</li>
+                        <li>Understand different profile sections (About, Experience, Education).</li>
+                        <li>Utilize LinkedIn's search filters if available in the game context.</li>
+                    </ul>
+                    Get ready to become a LinkedIn master!
+                `,
+                // image: "https://via.placeholder.com/600x400/1E293B/E2E8F0?text=Sudoku+Game",
+                // video: "https://www.youtube.com/embed/J7JvD0n-6hI" // Example Sudoku tutorial
+            },
+            chess: {
+                name: "Guess The Dream Job",
+instructions: `
+        <strong>How to Play:</strong>
+        <ul>
+            <li>Look at the emojis/clues shown.</li>
+            <li>Say the job title you think they describe.</li>
+            <li>Keep guessing as many as you can within 90 seconds.</li>
+        </ul>
+        <br>
+        <strong>Tips for Success:</strong>
+        <ul>
+            <li>Think about the clues as a whole, not one by one.</li>
+            <li>Say your first instinct—it’s usually correct.</li>
+            <li>Don’t waste time overthinking one clue.</li>
+        </ul>
+    `
+                // image: "https://via.placeholder.com/600x400/1E293B/E2E8F0?text=Riddle+Game",
+                // video: "https://www.youtube.com/embed/d-a3rLz1j8c" // Example riddle compilation
+            },
+            riddle: {
+                name: "Story Stack",
+                instructions: `
+        <strong>How to Play:</strong>
+        <ul>
+            <li>Pick up the cards facing up.</li>
+            <li>Make a short, meaningful story using those words.</li>
+            <li>Complete it in under 1 minute.</li>
+        </ul>
+        <br>
+        <strong>Tips for Success:</strong>
+        <ul>
+            <li>Use simple sentences.</li>
+            <li>Don’t aim for perfection—just keep it flowing.</li>
+            <li>Connect the words logically or humorously.</li>
+        </ul>
+    `,
+    // image: "https://via.placeholder.com/600x400/1E293B/E2E8F0?text=Chess+Puzzle",
+    //             video: "https://www.youtube.com/embed/n49k32hC544" // Example chess puzzle explanation
+            },
+            // code_debug: {
+            //     name: "Code Debugging Challenge",
+            //     instructions: "Identify and fix errors (bugs) in provided code snippets. Choose the correct solution from multiple options or write the corrected code.",
+            //     image: "https://via.placeholder.com/600x400/1E293B/E2E8F0?text=Debugging+Challenge",
+            //     video: "https://www.youtube.com/embed/5F463y4q258" // Example debugging tutorial
+            // },
+            trivia: {
+                name: "Tongue Twisters",
+                instructions: `
+        <strong>How to Play:</strong>
+        <ul>
+            <li>Read the tongue twister aloud.</li>
+            <li>Repeat it three times without mistakes.</li>
+            <li>You have 90 seconds.</li>
+        </ul>
+        <br>
+        <strong>Tips for Success:</strong>
+        <ul>
+            <li>Start slowly, then speed up.</li>
+            <li>Focus on clear pronunciation.</li>
+            <li>Don’t laugh or stop midway—it wastes time.</li>
+        </ul>
+    `,
+    // image: "https://via.placeholder.com/600x400/1E293B/E2E8F0?text=Career+Trivia",
+    //             video: "https://www.youtube.com/embed/e_q_yU0f8bY" // Example career advice videos
+            },
+            guess_logo: {
+                name: "Doodle Disaster",
+                instructions: `
+        <strong>How to Play:</strong>
+        <ul>
+            <li>First player draws a simple picture.</li>
+            <li>Each next player copies the previous one in 30 seconds.</li>
+            <li>The last player guesses what the original was.</li>
+        </ul>
+        <br>
+        <strong>Tips for Success:</strong>
+        <ul>
+            <li>Keep drawings simple.</li>
+            <li>Focus on main shapes, not details.</li>
+            <li>Work quickly; don’t erase or fix.</li>
+        </ul>
+    `,
+    // image: "https://via.placeholder.com/600x400/1E293B/E2E8F0?text=Company+Logo+Game",
+                // video: "https://www.youtube.com/embed/010Qc-R2r6g" // Example logo quiz video
+            },
+            word_search: {
+                name: "Quick Digits",
+                instructions: `
+        <strong>How to Play:</strong>
+        <ul>
+            <li>Numbers 1 to 50 are scattered randomly.</li>
+            <li>Point, tap, or circle them in order.</li>
+            <li>Reach as high a number as you can in 2 minutes.</li>
+        </ul>
+        <br>
+        <strong>Tips for Success:</strong>
+        <ul>
+            <li>Scan the board quickly; don’t stare at one area.</li>
+            <li>Use your finger to guide your eyes.</li>
+            <li>Stay calm—speed improves with focus.</li>
+        </ul>
+    `,
+    // image: "https://via.placeholder.com/600x400/1E293B/E2E8F0?text=Word+Search",
+    //             video: "https://www.youtube.com/embed/gS_4W6F0_y0" // Example word puzzle game
+            },
+            typing_speed: {
+                name: "Rubix Cube",
+                    instructions: `
+        <strong>How to Play:</strong>
+        <ul>
+            <li>Solve at least one full side of the Rubik’s cube.</li>
+            <li>Do it as fast as possible.</li>
+            <li>The quickest time wins.</li>
+        </ul>
+        <br>
+        <strong>Tips for Success:</strong>
+        <ul>
+            <li>Use a simple beginner method.</li>
+            <li>Focus on one color, then align edges.</li>
+            <li>Don’t panic; speed comes from smooth moves.</li>
+        </ul>
+    `,
+    // image: "https://via.placeholder.com/600x400/1E293B/E2E8F0?text=Typing+Speed+Test",
+    //             video: "https://www.youtube.com/embed/V61gT1D3v5s" // Example typing tutorial
+            },
+            typing_speed: {
+                name: "Paper Cups",
+                instructions: `
+        <strong>How to Play:</strong>
+        <ul>
+            <li>Stack the cups into a pyramid.</li>
+            <li>Unstack them back into one neat stack.</li>
+            <li>Finish both steps in 30 seconds.</li>
+        </ul>
+        <br>
+        <strong>Tips for Success:</strong>
+        <ul>
+            <li>Keep your hands steady.</li>
+            <li>Move quickly but stay in control.</li>
+            <li>Practice smooth stacking instead of rushing.</li>
+        </ul>
+    `,
+    // image: "https://via.placeholder.com/600x400/1E293B/E2E8F0?text=Typing+Speed+Test",
+    //             video: "https://www.youtube.com/embed/V61gT1D3v5s" // Example typing tutorial
+            }
+        };
+
+        gameBoxes.forEach(box => {
+            box.addEventListener('click', () => {
+                const gameId = box.dataset.game;
+                const game = gamesData[gameId];
+
+                if (game) {
+                    expandedGameName.innerHTML = game.name;
+                    expandedGameImage.src = game.image;
+                    // expandedGameImage.alt = game.name + " Image";
+                    expandedGameInstructions.innerHTML = game.instructions;
+                    // expandedGameVideo.src = game.video; // Set the video src
+                    gameOverlay.classList.add('active');
+                }
+            });
+        });
+
+        closeGameOverlayBtn.addEventListener('click', () => {
+            gameOverlay.classList.remove('active');
+            expandedGameVideo.src = ""; // Stop the video when closing
+        });
+
+        gameOverlay.addEventListener('click', (e) => {
+            if (e.target === gameOverlay) {
+                gameOverlay.classList.remove('active');
+                expandedGameVideo.src = ""; // Stop the video when clicking outside
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && gameOverlay.classList.contains('active')) {
+                gameOverlay.classList.remove('active');
+                expandedGameVideo.src = ""; // Stop the video when pressing Esc
+            }
+        });
+    </script>
+</body>
+</html>
