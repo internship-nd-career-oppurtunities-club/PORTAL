@@ -1,532 +1,1039 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=1024">
-   <title>Internships & Career Opportunities Club</title> 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0F172A; /* Dark Slate Blue */
-            color: #E2E8F0; /* Light Gray */
-            line-height: 1.6;
-            overflow-x: hidden; /* Prevent horizontal scrolling */
-        }
-        section {
-            padding: 2.5rem 1rem; /* Adjusted for smaller screens */
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .hero-section {
-            background: linear-gradient(135deg, #1E3A8A 0%, #4F46E5 100%); /* Dark Blue to Indigo gradient */
-            min-height: 80vh; /* Slightly reduced for mobile */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 1.5rem; /* Adjusted padding */
-            position: relative;
-            overflow: hidden;
-            border-bottom-left-radius: 30px; /* Slightly smaller radius */
-            border-bottom-right-radius: 30px;
-        }
-        .hero-content {
-            z-index: 10;
-            position: relative;
-        }
-        .hero-headline {
-            font-size: 2.5rem; /* Smaller for mobile */
-            font-weight: 800; /* font-extrabold */
-            color: #F8FAFC; /* White */
-            line-height: 1.2; /* Adjusted line height */
-            margin-bottom: 0.75rem; /* Reduced margin */
-            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Slightly softer shadow */
-        }
-        .hero-subheading {
-            font-size: 1.125rem; /* Smaller for mobile */
-            color: #CBD5E1; /* Slate 300 */
-            margin-bottom: 2rem; /* Reduced margin */
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .cta-button {
-            background-color: #FACC15; /* Amber 400 */
-            color: #1F2937; /* Dark Gray */
-            padding: 1rem 2.5rem; /* Adjusted padding */
-            border-radius: 50px;
-            font-size: 1.1rem; /* Slightly smaller font */
-            font-weight: 700;
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0 8px 15px rgba(250, 204, 21, 0.4); /* Softer shadow */
-            display: inline-block;
-            text-decoration: none;
-        }
-        .cta-button:hover {
-            background-color: #FDE047; /* Amber 300 */
-            transform: translateY(-3px) scale(1.01); /* Less dramatic hover effect */
-            box-shadow: 0 10px 20px rgba(250, 204, 21, 0.6);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1024">
+ <title>Internships & Career Opportunities Club</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+      body {
+          font-family: 'Inter', sans-serif;
+          background-color: #0F172A; /* Dark Slate Blue */
+          color: #E2E8F0; /* Light Gray */
+          line-height: 1.6;
+          overflow-x: hidden; /* Prevent horizontal scrolling */
+      }
+      section {
+          padding: 2.5rem 1rem; /* Adjusted for smaller screens */
+          max-width: 1200px;
+          margin: 0 auto;
+      }
+      .hero-section {
+          background: linear-gradient(135deg, #1E3A8A 0%, #4F46E5 100%); /* Dark Blue to Indigo gradient */
+          min-height: 80vh; /* Slightly reduced for mobile */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          padding: 1.5rem; /* Adjusted padding */
+          position: relative;
+          overflow: hidden;
+          border-bottom-left-radius: 30px; /* Slightly smaller radius */
+          border-bottom-right-radius: 30px;
+      }
+      .hero-content {
+          z-index: 10;
+          position: relative;
+      }
+      .hero-headline {
+          font-size: 2.5rem; /* Smaller for mobile */
+          font-weight: 800; /* font-extrabold */
+          color: #F8FAFC; /* White */
+          line-height: 1.2; /* Adjusted line height */
+          margin-bottom: 0.75rem; /* Reduced margin */
+          text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Slightly softer shadow */
+      }
+      .hero-subheading {
+          font-size: 1.125rem; /* Smaller for mobile */
+          color: #CBD5E1; /* Slate 300 */
+          margin-bottom: 2rem; /* Reduced margin */
+          max-width: 800px;
+          margin-left: auto;
+          margin-right: auto;
+      }
+      .cta-button {
+          background-color: #FACC15; /* Amber 400 */
+          color: #1F2937; /* Dark Gray */
+          padding: 1rem 2.5rem; /* Adjusted padding */
+          border-radius: 50px;
+          font-size: 1.1rem; /* Slightly smaller font */
+          font-weight: 700;
+          transition: all 0.3s ease-in-out;
+          box-shadow: 0 8px 15px rgba(250, 204, 21, 0.4); /* Softer shadow */
+          display: inline-block;
+          text-decoration: none;
+      }
+      .cta-button:hover {
+          background-color: #FDE047; /* Amber 300 */
+          transform: translateY(-3px) scale(1.01); /* Less dramatic hover effect */
+          box-shadow: 0 10px 20px rgba(250, 204, 21, 0.6);
+      }
 
-        /* Stream Cards Section */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Smaller minmax for mobile cards */
-            gap: 1rem; /* Reduced gap */
-        }
-        .stream-card {
-            background-color: #1E293B; /* Darker Slate */
-            border-radius: 12px; /* Smaller radius */
-            padding: 1.5rem; /* Reduced padding */
-            text-align: center;
-            font-size: 1.25rem; /* Smaller font */
-            font-weight: 600;
-            color: #93C5FD; /* Light Blue */
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Softer shadow */
-            transition: all 0.3s ease-in-out;
-            cursor: pointer;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 120px; /* Reduced min-height */
-        }
-        .stream-card:hover {
-            background-color: #334155; /* Even Darker Slate */
-            transform: translateY(-5px) scale(1.02); /* Less dramatic hover */
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            color: #BFDBFE; /* Lighter Blue */
-        }
-        .stream-card i {
-            font-size: 2rem; /* Icon size */
-            margin-bottom: 0.5rem; /* Reduced margin */
-            color: #60A5FA; /* Blue 400 */
-        }
 
-        /* Discover Section */
-        .discover-item {
-            display: flex;
-            align-items: center;
-            background-color: #1E293B;
-            border-radius: 10px; /* Smaller radius */
-            padding: 1rem; /* Reduced padding */
-            margin-bottom: 0.75rem; /* Reduced margin */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            transition: transform 0.2s ease-in-out;
-        }
-        .discover-item:hover {
-            transform: translateX(3px); /* Less dramatic hover */
-        }
-        .discover-item i {
-            font-size: 1.75rem; /* Smaller icon size */
-            color: #FACC15; /* Amber 400 */
-            margin-right: 0.75rem; /* Reduced margin */
-            min-width: 1.75rem; /* Ensure consistent spacing */
-        }
-        .discover-item p {
-            font-size: 1rem; /* Smaller text */
-            color: #CBD5E1;
-        }
 
-        /* Join Us Section */
-        .join-us-container {
-            background-color: #1E293B;
-            border-radius: 16px; /* Smaller radius */
-            padding: 2rem; /* Adjusted padding */
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-            display: flex;
-            flex-direction: column; /* Force column layout on mobile */
-            gap: 1.5rem; /* Reduced gap */
-        }
-        .event-poster {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-        .event-poster img {
-            width: 180px; /* Slightly smaller QR image */
-            height: auto; /* Maintain aspect ratio */
-            border-radius: 6px; /* Smaller radius */
-            margin-bottom: 1rem;
-            border: 3px solid #FACC15; /* Thinner border */
-            box-shadow: 0 4px 15px rgba(250, 204, 21, 0.3);
-        }
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.6rem 1.2rem; /* Smaller padding */
-            background-color: #4F46E5; /* Indigo 600 */
-            color: #F8FAFC;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease-in-out;
-            margin: 0.4rem; /* Reduced margin */
-            font-size: 0.9rem; /* Smaller font size */
-        }
-        .social-link:hover {
-            background-color: #6366F1; /* Indigo 500 */
-            transform: translateY(-2px);
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-        }
-        .social-link i {
-            margin-right: 0.6rem; /* Reduced margin */
-            font-size: 1.1rem; /* Adjusted icon size */
-        }
 
-        .join-us-form {
-            flex: 1;
-        }
-        .join-us-form input, .join-us-form select {
-            width: 100%;
-            padding: 0.8rem; /* Reduced padding for inputs */
-            margin-bottom: 0.8rem; /* Reduced margin */
-            border-radius: 6px; /* Smaller radius */
-            border: 1px solid #475569; /* Slate 700 */
-            background-color: #0F172A; /* Dark Slate Blue */
-            color: #F8FAFC;
-            font-size: 0.95rem; /* Slightly smaller font */
-        }
-        .join-us-form input::placeholder {
-            color: #94A3B8; /* Slate 400 */
-        }
-        .join-us-form button {
-            width: 100%;
-            background-color: #FACC15; /* Amber 400 */
-            color: #1F2937;
-            padding: 0.9rem; /* Reduced padding */
-            border-radius: 6px; /* Smaller radius */
-            font-size: 1rem; /* Slightly smaller font */
-            font-weight: 700;
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        .join-us-form button:hover {
-            background-color: #FDE047; /* Amber 300 */
-            transform: translateY(-1px);
-            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
-        }
+      /* Stream Cards Section */
+      .card-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Smaller minmax for mobile cards */
+          gap: 1rem; /* Reduced gap */
+      }
+      .stream-card {
+          background-color: #1E293B; /* Darker Slate */
+          border-radius: 12px; /* Smaller radius */
+          padding: 1.5rem; /* Reduced padding */
+          text-align: center;
+          font-size: 1.25rem; /* Smaller font */
+          font-weight: 600;
+          color: #93C5FD; /* Light Blue */
+          box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Softer shadow */
+          transition: all 0.3s ease-in-out;
+          cursor: pointer;
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          min-height: 120px; /* Reduced min-height */
+      }
+      .stream-card:hover {
+          background-color: #334155; /* Even Darker Slate */
+          transform: translateY(-5px) scale(1.02); /* Less dramatic hover */
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+          color: #BFDBFE; /* Lighter Blue */
+      }
+      .stream-card i {
+          font-size: 2rem; /* Icon size */
+          margin-bottom: 0.5rem; /* Reduced margin */
+          color: #60A5FA; /* Blue 400 */
+      }
 
-        /* Footer */
-        .footer-section {
-            background-color: #1E293B;
-            text-align: center;
-            padding: 2rem 1rem; /* Adjusted padding */
-            border-top-left-radius: 30px; /* Smaller radius */
-            border-top-right-radius: 30px;
-            font-size: 1rem; /* Smaller font */
-            color: #94A3B8;
-        }
-        .footer-section p.mt-2 {
-            font-size: 0.75rem; /* Even smaller copyright text */
-        }
 
-        /* Responsive adjustments for larger screens (using min-width) */
-        @media (min-width: 768px) {
-            section {
-                padding: 4rem 1rem; /* Revert to larger padding on desktop */
-            }
-            .hero-section {
-                min-height: 100vh; /* Revert to full height on desktop */
-                border-bottom-left-radius: 50px;
-                border-bottom-right-radius: 50px;
-            }
-            .hero-headline {
-                font-size: 5rem; /* text-7xl */
-                line-height: 1.1;
-                margin-bottom: 1rem;
-            }
-            .hero-subheading {
-                font-size: 1.75rem; /* text-3xl */
-                margin-bottom: 2.5rem;
-            }
-            .cta-button {
-                padding: 1.25rem 3rem;
-                font-size: 1.25rem;
-            }
-            .stream-card {
-                padding: 2rem;
-                font-size: 1.5rem;
-                min-height: 150px;
-            }
-            .card-grid {
-                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Original desktop minmax */
-                gap: 1.5rem;
-            }
-            .stream-card i {
-                font-size: 2.5rem;
-                margin-bottom: 0.75rem;
-            }
-            .discover-item {
-                padding: 1.25rem;
-                margin-bottom: 1rem;
-            }
-            .discover-item i {
-                font-size: 2rem;
-                margin-right: 1rem;
-                min-width: 2rem;
-            }
-            .discover-item p {
-                font-size: 1.125rem;
-            }
-            .join-us-container {
-                flex-direction: row; /* Desktop: row layout */
-                gap: 4rem;
-                padding: 2.5rem;
-                border-radius: 20px;
-            }
-            .event-poster img {
-                width: 200px; /* Revert QR image size */
-                height: 300px;
-                border-radius: 8px;
-                border: 4px solid #FACC15;
-            }
-            .social-link {
-                padding: 0.75rem 1.5rem;
-                margin: 0.5rem;
-                font-size: 1rem;
-            }
-            .social-link i {
-                margin-right: 0.75rem;
-                font-size: 1.25rem;
-            }
-            .join-us-form input, .join-us-form select {
-                padding: 1rem;
-                margin-bottom: 1rem;
-                border-radius: 8px;
-                font-size: 1rem;
-            }
-            .join-us-form button {
-                padding: 1rem;
-                border-radius: 8px;
-                font-size: 1.125rem;
-            }
-            .footer-section {
-                padding: 2.5rem 1rem;
-                border-top-left-radius: 50px;
-                border-top-right-radius: 50px;
-                font-size: 1.25rem;
-            }
-            .footer-section p.mt-2 {
-                font-size: 0.875rem;
-            }
-        }
-        @media (min-width: 1024px) {
-            .hero-headline {
-                font-size: 6rem; /* text-8xl */
-            }
-            .card-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            }
-        }
-    </style>
+
+
+      /* Discover Section */
+      .discover-item {
+          display: flex;
+          align-items: center;
+          background-color: #1E293B;
+          border-radius: 10px; /* Smaller radius */
+          padding: 1rem; /* Reduced padding */
+          margin-bottom: 0.75rem; /* Reduced margin */
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+          transition: transform 0.2s ease-in-out;
+      }
+      .discover-item:hover {
+          transform: translateX(3px); /* Less dramatic hover */
+      }
+      .discover-item i {
+          font-size: 1.75rem; /* Smaller icon size */
+          color: #FACC15; /* Amber 400 */
+          margin-right: 0.75rem; /* Reduced margin */
+          min-width: 1.75rem; /* Ensure consistent spacing */
+      }
+      .discover-item p {
+          font-size: 1rem; /* Smaller text */
+          color: #CBD5E1;
+      }
+
+
+
+
+      /* Join Us Section */
+      .join-us-container {
+          background-color: #1E293B;
+          border-radius: 16px; /* Smaller radius */
+          padding: 2rem; /* Adjusted padding */
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+          display: flex;
+          flex-direction: column; /* Force column layout on mobile */
+          gap: 1.5rem; /* Reduced gap */
+      }
+      .event-poster {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+      }
+      .event-poster img {
+          width: 180px; /* Slightly smaller QR image */
+          height: auto; /* Maintain aspect ratio */
+          border-radius: 6px; /* Smaller radius */
+          margin-bottom: 1rem;
+          border: 3px solid #FACC15; /* Thinner border */
+          box-shadow: 0 4px 15px rgba(250, 204, 21, 0.3);
+      }
+      .social-link {
+          display: inline-flex;
+          align-items: center;
+          padding: 0.6rem 1.2rem; /* Smaller padding */
+          background-color: #4F46E5; /* Indigo 600 */
+          color: #F8FAFC;
+          border-radius: 30px;
+          text-decoration: none;
+          font-weight: 600;
+          transition: all 0.3s ease-in-out;
+          margin: 0.4rem; /* Reduced margin */
+          font-size: 0.9rem; /* Smaller font size */
+      }
+      .social-link:hover {
+          background-color: #6366F1; /* Indigo 500 */
+          transform: translateY(-2px);
+          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+      }
+      .social-link i {
+          margin-right: 0.6rem; /* Reduced margin */
+          font-size: 1.1rem; /* Adjusted icon size */
+      }
+
+
+
+
+      .join-us-form {
+          flex: 1;
+      }
+      .join-us-form input, .join-us-form select {
+          width: 100%;
+          padding: 0.8rem; /* Reduced padding for inputs */
+          margin-bottom: 0.8rem; /* Reduced margin */
+          border-radius: 6px; /* Smaller radius */
+          border: 1px solid #475569; /* Slate 700 */
+          background-color: #0F172A; /* Dark Slate Blue */
+          color: #F8FAFC;
+          font-size: 0.95rem; /* Slightly smaller font */
+      }
+      .join-us-form input::placeholder {
+          color: #94A3B8; /* Slate 400 */
+      }
+      .join-us-form button {
+          width: 100%;
+          background-color: #FACC15; /* Amber 400 */
+          color: #1F2937;
+          padding: 0.9rem; /* Reduced padding */
+          border-radius: 6px; /* Smaller radius */
+          font-size: 1rem; /* Slightly smaller font */
+          font-weight: 700;
+          transition: all 0.3s ease-in-out;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+      .join-us-form button:hover {
+          background-color: #FDE047; /* Amber 300 */
+          transform: translateY(-1px);
+          box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+      }
+
+
+
+
+      /* Footer */
+      .footer-section {
+          background-color: #1E293B;
+          text-align: center;
+          padding: 2rem 1rem; /* Adjusted padding */
+          border-top-left-radius: 30px; /* Smaller radius */
+          border-top-right-radius: 30px;
+          font-size: 1rem; /* Smaller font */
+          color: #94A3B8;
+      }
+      .footer-section p.mt-2 {
+          font-size: 0.75rem; /* Even smaller copyright text */
+      }
+
+
+
+
+      /* Responsive adjustments for larger screens (using min-width) */
+      @media (min-width: 768px) {
+          section {
+              padding: 4rem 1rem; /* Revert to larger padding on desktop */
+          }
+          .hero-section {
+              min-height: 100vh; /* Revert to full height on desktop */
+              border-bottom-left-radius: 50px;
+              border-bottom-right-radius: 50px;
+          }
+          .hero-headline {
+              font-size: 5rem; /* text-7xl */
+              line-height: 1.1;
+              margin-bottom: 1rem;
+          }
+          .hero-subheading {
+              font-size: 1.75rem; /* text-3xl */
+              margin-bottom: 2.5rem;
+          }
+          .cta-button {
+              padding: 1.25rem 3rem;
+              font-size: 1.25rem;
+          }
+          .stream-card {
+              padding: 2rem;
+              font-size: 1.5rem;
+              min-height: 150px;
+          }
+          .card-grid {
+              grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Original desktop minmax */
+              gap: 1.5rem;
+          }
+          .stream-card i {
+              font-size: 2.5rem;
+              margin-bottom: 0.75rem;
+          }
+          .discover-item {
+              padding: 1.25rem;
+              margin-bottom: 1rem;
+          }
+          .discover-item i {
+              font-size: 2rem;
+              margin-right: 1rem;
+              min-width: 2rem;
+          }
+          .discover-item p {
+              font-size: 1.125rem;
+          }
+          .join-us-container {
+              flex-direction: row; /* Desktop: row layout */
+              gap: 4rem;
+              padding: 2.5rem;
+              border-radius: 20px;
+          }
+          .event-poster img {
+              width: 200px; /* Revert QR image size */
+              height: 300px;
+              border-radius: 8px;
+              border: 4px solid #FACC15;
+          }
+          .social-link {
+              padding: 0.75rem 1.5rem;
+              margin: 0.5rem;
+              font-size: 1rem;
+          }
+          .social-link i {
+              margin-right: 0.75rem;
+              font-size: 1.25rem;
+          }
+          .join-us-form input, .join-us-form select {
+              padding: 1rem;
+              margin-bottom: 1rem;
+              border-radius: 8px;
+              font-size: 1rem;
+          }
+          .join-us-form button {
+              padding: 1rem;
+              border-radius: 8px;
+              font-size: 1.125rem;
+          }
+          .footer-section {
+              padding: 2.5rem 1rem;
+              border-top-left-radius: 50px;
+              border-top-right-radius: 50px;
+              font-size: 1.25rem;
+          }
+          .footer-section p.mt-2 {
+              font-size: 0.875rem;
+          }
+      }
+      @media (min-width: 1024px) {
+          .hero-headline {
+              font-size: 6rem; /* text-8xl */
+          }
+          .card-grid {
+              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          }
+      }
+
+
+
+
+      /* Add these styles to your main CSS file or within a <style> tag in the <head> */
+
+
+
+
+  :root {
+      --primary-bg: #0F172A;
+      --section-bg-cards: #1E293B;
+      --text-light-gray: #E2E8F0;
+      --section-headings: #FFD700; /* Amber for headings */
+      --discover-item-text: #CBD5E1;
+      --accent-amber: #FACC15; /* Amber 400 */
+      --accent-amber-hover: #FDE047; /* Amber 300 */
+  }
+
+
+
+
+  /* --- Discover Section --- */
+  .discover-section {
+      padding: 4rem 1rem; /* More generous padding */
+      text-align: center;
+  }
+
+
+
+
+  .discover-section h2 {
+      font-size: 2.5rem; /* Slightly larger headings */
+      font-weight: 800; /* Extra bold for impact */
+      color: var(--section-headings);
+      margin-bottom: 2.5rem; /* More space below headings */
+  }
+
+
+
+
+  .discover-grid {
+      display: grid;
+      grid-template-columns: 1fr; /* Default to single column */
+      gap: 1.5rem; /* Standard gap */
+      padding: 1rem 0;
+  }
+
+
+
+
+  .discover-item {
+      background-color: var(--section-bg-cards);
+      border-radius: 12px;
+      padding: 1.5rem; /* Adjusted padding */
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem; /* Adjusted gap */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow (reverted from table-like) */
+      border: none; /* No border (reverted from table-like) */
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+      cursor: pointer; /* Explicitly set cursor to pointer for clickability */
+  }
+
+
+
+
+  .discover-item:hover {
+      transform: translateX(8px); /* More pronounced translation */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+      background-color: var(--primary-bg); /* Darken background on hover */
+  }
+
+
+
+
+  .discover-item i {
+      font-size: 1.8rem; /* Larger icons */
+      color: var(--accent-amber);
+      flex-shrink: 0;
+      margin-top: 0.1rem; /* Fine-tune alignment */
+  }
+
+
+
+
+  .discover-item p {
+      font-size: 1.05rem; /* Slightly larger text */
+      color: var(--discover-item-text);
+      text-align: left; /* Ensure text alignment is left within the item */
+  }
+
+
+
+
+  /* --- Discover Button Specific Styles --- */
+  .discover-button-container {
+      display: flex;
+      justify-content: center; /* Centers the button horizontally */
+      margin-top: 3rem; /* Space above the button, adjust as needed */
+      padding: 0 1rem; /* Ensure padding for smaller screens */
+  }
+
+
+
+
+  .discover-games-button {
+      display: flex; /* Use flexbox for icon and text alignment */
+      align-items: center; /* Vertically align icon and text */
+      gap: 1rem; /* Space between icon and text */
+      background-color: var(--accent-amber); /* Amber background for button look */
+      color: var(--primary-bg); /* Dark text for contrast */
+      padding: 1.5rem 2.5rem; /* Generous padding for button feel */
+      border-radius: 9999px; /* Pill-shaped button */
+      text-decoration: none; /* Remove underline */
+      font-weight: 700; /* Bold text for prominence */
+      font-size: 1.15rem; /* Slightly larger text */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      max-width: 500px; /* Limit button width on large screens */
+      text-align: center; /* Ensure text is centered within its flex item */
+      justify-content: center; /* Ensure content is centered if it doesn't fill max-width */
+  }
+
+
+
+
+  .discover-games-button:hover {
+      background-color: var(--accent-amber-hover); /* Lighter amber on hover */
+      transform: translateY(-3px) scale(1.01); /* Lift effect */
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
+  }
+
+
+
+
+  .discover-games-button i {
+      font-size: 2.2rem; /* Larger icon */
+      color: var(--primary-bg); /* Match button text color */
+  }
+
+
+
+
+  .discover-games-button p {
+      margin: 0; /* Remove default paragraph margins */
+      line-height: 1.3; /* Adjust line height for button text */
+      color: var(--primary-bg); /* Ensure text color is dark */
+  }
+
+
+
+
+  /* --- Generic Detail Overlay (for both Games and Discover items) --- */
+  .detail-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+
+
+
+  .detail-overlay.active {
+      opacity: 1;
+      visibility: visible;
+  }
+
+
+
+
+  .expanded-detail-content {
+      background-color: var(--section-bg-cards);
+      border-radius: 12px;
+      padding: 2.5rem; /* More padding */
+      max-width: 95%; /* Slightly wider */
+      max-height: 90%;
+      overflow-y: auto;
+      position: relative;
+      transform: scale(0.9);
+      transition: transform 0.3s ease;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+
+
+
+
+  .detail-overlay.active .expanded-detail-content {
+      transform: scale(1);
+  }
+
+
+
+
+  .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1.2rem;
+      background: none;
+      border: none;
+      font-size: 2.2rem; /* Larger close button */
+      color: var(--text-light-gray);
+      cursor: pointer;
+      transition: color 0.3s ease;
+  }
+
+
+
+
+  .close-btn:hover {
+      color: var(--accent-amber);
+  }
+
+
+
+
+  .expanded-detail-content h3 {
+      font-size: 2.2rem; /* Larger title */
+      color: var(--accent-amber);
+      margin-bottom: 1.2rem;
+      text-align: center;
+  }
+
+
+
+
+  .expanded-detail-content p {
+      margin-bottom: 1.8rem; /* More space */
+      color: var(--discover-item-text);
+      text-align: justify;
+      font-size: 1.1rem; /* Larger text */
+      line-height: 1.7;
+  }
+
+
+
+
+  .expanded-detail-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 1.8rem; /* More space */
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+
+
+
+  .expanded-detail-content .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      margin-top: 1.5rem; /* Add space above video */
+  }
+
+
+
+
+  .expanded-detail-content .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+  }
+
+
+
+
+  /* --- Responsive Design for this section --- */
+  @media (min-width: 640px) {
+      .discover-grid {
+          grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+      }
+  }
+
+
+
+
+  </style>
 </head>
 <body>
-    <section class="hero-section">
-        <div class="hero-content">
-            <h1 class="hero-headline">
-                Launch Your Career From Day One <span class="animate-bounce inline-block">🚀</span>
-            </h1>
-            <p class="hero-subheading">
-                Explore career roadmaps, internships, and expert tips — tailored for your branch, right at our stall!
-            </p>
-            <button onclick="scrollToSection()" class="cta-button">Start your Journey</button>
-        </div>
-    </section>
+  <section class="hero-section">
+      <div class="hero-content">
+          <h1 class="hero-headline">
+              Launch Your Career From Day One <span class="animate-bounce inline-block">🚀</span>
+          </h1>
+          <p class="hero-subheading">
+              Explore career roadmaps, internships, and expert tips — tailored for your branch, right at our stall!
+          </p>
+          <button onclick="scrollToSection()" class="cta-button">Start your Journey</button>
+      </div>
+  </section>
 
-    <section id="roadmaps" class="py-16 px-4 text-center">
-        <h2 class="text-4xl font-bold mb-12 text-indigo-300">Choose Your Stream & Get Your Roadmap</h2>
-        <div class="card-grid">
-            <div class="stream-card" onclick="downloadRoadmap('CSE')">
-                <i class="fas fa-laptop-code"></i> CSE
-            </div>
-            <div class="stream-card" onclick="downloadRoadmap('ECE')">
-                <i class="fas fa-microchip"></i> ECE
-            </div>
-            <div class="stream-card" onclick="downloadRoadmap('EEE')">
-                <i class="fas fa-bolt"></i> EEE
-            </div>
-            <div class="stream-card" onclick="downloadRoadmap('Civil')">
-                <i class="fas fa-hard-hat"></i> Civil
-            </div>
-            <div class="stream-card" onclick="downloadRoadmap('Mechanical')">
-                <i class="fas fa-cogs"></i> Mechanical
-            </div>
-        </div>
-    </section>
 
-    <section id="discover" class="py-16 px-4">
-        <h2 class="text-4xl font-bold mb-12 text-center text-indigo-300">What You'll Discover at Our Stall</h2>
-        <div class="grid md:grid-cols-2 gap-6">
-            <div class="discover-item">
-                <i class="fab fa-linkedin"></i>
-                <p>Create your first LinkedIn profile(LinkedIn Corner)</p>
-            </div>
-            <div class="discover-item">
-                <i class="fas fa-file-alt"></i>
-                <p>Learn resume & portfolio tips</p>
-            </div>
-            <div class="discover-item">
-                <i class="fas fa-gift"></i>
-                <p>Get free career starter kits</p>
-            </div>
-            <div class="discover-item">
-                <i class="fas fa-puzzle-piece"></i>
-                <p>Knowledged packed fun games</p>
-            </div>
-            <div class="discover-item md:col-span-2">
-                <i class="fas fa-briefcase"></i>
-                <p>Explore real-time internship portals</p>
-            </div>
-        </div>
-    </section>
 
-    <section id="join-us" class="py-16 px-4">
-        <h2 class="text-4xl font-bold mb-6 text-center text-indigo-300">Join Our Community!</h2>
-        <p class="font-bold mb-6 text-center text-indigo-300">Unlock your potential. Connect, learn, and grow with us!</p>
 
-        <div class="join-us-container">
-            <div class="event-poster">
-                <img src="poster.jpeg" alt="EVENT POSTER">
-                <div class="flex flex-wrap justify-center mt-4">
-                    <a href="https://chat.whatsapp.com/DSwyvm54skoFgMMTqswKG5?mode=ac_t" target="_blank" class="social-link">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
-                    </a>
-                    <a href="https://www.linkedin.com/company/internships-and-career-opportunities-club" target="_blank" class="social-link">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                </div>
-            </div>
-            <div class="join-us-form">
-                <p class="text-xl font-semibold mb-4 text-indigo-200">Quick Sign-Up for Updates:</p>
-                <form id="signup-form">
-                    <input type="text" id="name" name="name" placeholder="Your Name" required class="focus:outline-none focus:ring-2 focus:ring-amber-400">
-                    <input type="text" id="idnum" name="idnumber" placeholder="ID NUMBER" required class="focus:outline-none focus:ring-2 focus:ring-amber-400">
-                    <select id="branch" name="branch" required class="focus:outline-none focus:ring-2 focus:ring-amber-400">
-                        <option value="">Select Your Branch</option>
-                        <option value="CSE">CSE</option>
-                        <option value="ECE">ECE</option>
-                        <option value="EEE">EEE</option>
-                        <option value="Civil">Civil</option>
-                        <option value="Mechanical">Mechanical</option>
-                    </select>
-                    <input type="number" id="year" name="year" placeholder="Your Year (e.g., 1 or 2)" min="1" max="4" required class="focus:outline-none focus:ring-2 focus:ring-amber-400">
-                    <input type="email" id="email" name="email" placeholder="Your Email Address" required class="focus:outline-none focus:ring-2 focus:ring-amber-400">
-                    <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required class="focus:outline-none focus:ring-2 focus:ring-amber-400">
-                    <button type="submit">Add Me to List</button>
-                </form>
-                <div id="form-message" class="mt-4 text-center text-lg font-semibold hidden"></div>
-            </div>
-        </div>
-    </section>
+  <section id="roadmaps" class="py-16 px-4 text-center">
+      <h2 class="text-4xl font-bold mb-12 text-indigo-300">Choose Your Stream & Get Your Roadmap</h2>
+      <div class="card-grid">
+          <div class="stream-card" onclick="downloadRoadmap('CSE')">
+              <i class="fas fa-laptop-code"></i> CSE
+          </div>
+          <div class="stream-card" onclick="downloadRoadmap('ECE')">
+              <i class="fas fa-microchip"></i> ECE
+          </div>
+          <div class="stream-card" onclick="downloadRoadmap('EEE')">
+              <i class="fas fa-bolt"></i> EEE
+          </div>
+          <div class="stream-card" onclick="downloadRoadmap('Civil')">
+              <i class="fas fa-hard-hat"></i> Civil
+          </div>
+          <div class="stream-card" onclick="downloadRoadmap('Mechanical')">
+              <i class="fas fa-cogs"></i> Mechanical
+          </div>
+      </div>
+  </section>
+<section id="discover-section" class="discover-section">
+  <div class="container">
+      <h2>What You'll Discover at Our Stall</h2>
+      <div class="discover-grid">
+          <div class="discover-item" data-discover="linkedin-profile">
+              <i class="fab fa-linkedin"></i>
+              <p>Create your first LinkedIn profile (LinkedIn Corner)</p>
+          </div>
+          <div class="discover-item" data-discover="resume-portfolio">
+              <i class="fas fa-file-alt"></i>
+              <p>Learn resume & portfolio tips</p>
+          </div>
+          <div class="discover-item" data-discover="career-kits">
+              <i class="fas fa-gift"></i>
+              <p>Get free career starter kits</p>
+          </div>
+          <div class="discover-item" data-discover="internship-portals">
+              <i class="fas fa-puzzle-piece"></i>
+              <p>Explore real-time internship portals</p>
+          </div>
+      </div>
 
-    <footer class="footer-section">
-        <p>Still Confused? Visit Our Stall at Udhaan — We'll Guide You!</p>
-        <p class="mt-2 text-sm text-slate-500">&copy; 2025 Internships & Career Opportunities Club. All rights reserved.</p>
-    </footer>
 
-    <script>
-        //function to scroll bottom
-        function scrollToSection() {
-            const targetElement = document.getElementById("join-us");
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        }
-        // JavaScript for PDF download and form submission
-        const roadmapLinks = {
-            'CSE': 'https://drive.google.com/uc?export=download&id=11Uk5BigwDmtfQ1E-0ky_7VYAP_33VksW',
-            'ECE': 'https://drive.google.com/uc?export=download&id=1fVddMiF5xPWr-XCKmGGt7jttvGq75aBi',
-            'EEE': 'https://drive.google.com/uc?export=download&id=1GCicrtCdLgHpPiSpo2_AJ1cy_5AK4Oma',
-            'Civil': 'https://drive.google.com/uc?export=download&id=1lSzhuUtmio_1Puw1oe81FJkxkQX5gFQV',
-            'Mechanical': 'https://drive.google.com/uc?export=download&id=1h8dXy0FTHNPI6P5NukbWOW25xhAGv16F',
-        };
 
-        /**
-         * Downloads the career roadmap PDF for the selected stream.
-         * @param {string} stream - The stream for which to download the roadmap.
-         */
-        function downloadRoadmap(stream) {
-            const pdfUrl = roadmapLinks[stream];
-            if (pdfUrl) {
-                // Create a temporary anchor element to trigger download
-                const a = document.createElement('a');
-                a.href = pdfUrl;
-                a.download = `${stream}_Career_Roadmap.pdf`; // Suggested filename
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                console.log(`Downloading roadmap for ${stream} from: ${pdfUrl}`);
-                // You could also show a small message to the user here
-            } else {
-                console.error(`Roadmap not found for ${stream}`);
-                // In a real app, use a custom modal for user feedback
-                alert('Roadmap not available for this stream yet. Please visit our stall!');
-            }
-        }
 
-        
-        const signupForm = document.getElementById('signup-form');
-        const formMessage = document.getElementById('form-message');
+      <div class="discover-button-container">
+          <a href="game_zone.html" target="_blank" class="discover-games-button">
+              <i class="fas fa-gamepad"></i>
+              <p>Knowledged packed fun games (click here to enter game zone)</p>
+          </a>
+      </div>
+  </div>
+</section>
 
-        // PASTE YOUR DEPLOYED WEB APP URL HERE
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxoHLsT7HxUav0HmkcVngEpycsinHibiUCTWsc2xez6ikS_doBiOazv8GuzpiOCCD29tQ/exec';
 
-        signupForm.addEventListener('submit', async function(event) {
-            event.preventDefault(); // Prevent default form submission
 
-            formMessage.classList.add('hidden'); // Hide any previous messages
-            formMessage.classList.remove('text-red-400', 'text-emerald-400'); // Reset colors
 
-            const submitButton = this.querySelector('button[type="submit"]');
-            submitButton.disabled = true; // Disable button during submission
-            submitButton.textContent = 'Submitting...';
+<div class="detail-overlay" id="detailOverlay">
+  <div class="expanded-detail-content" id="expandedDetailContent">
+      <button class="close-btn" id="closeDetailOverlay">×</button>
+      <h3 id="detailTitle"></h3>
+      <img id="detailImage" src="" alt="Detail Image">
+      <p id="detailDescription"></p>
+      <div class="video-container">
+          <iframe id="detailVideo" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+  </div>
+</div>
 
-            const formData = new FormData(this);
 
-            try {
-                const response = await fetch(SCRIPT_URL, {
-                    method: 'POST',
-                    body: formData,
-                    redirect: 'follow' // Important for Apps Script deployments
-                });
 
-                const result = await response.json();
 
-                if (result.result === 'success') {
-                    formMessage.textContent = 'Thanks for showing interest! We\'ll be in touch!';
-                    formMessage.classList.remove('hidden');
-                    formMessage.classList.add('text-emerald-400');
-                    signupForm.reset(); // Clear the form on success
-                } else {
-                    console.error('Submission error:', result.error);
-                    formMessage.textContent = 'Oops! Something went wrong. Please try again.';
-                    formMessage.classList.remove('hidden');
-                    formMessage.classList.add('text-red-400');
-                }
-            } catch (error) {
-                console.error('Network or fetch error:', error);
-                formMessage.textContent = 'Network error. Please check your connection or try again later.';
-                formMessage.classList.remove('hidden');
-                formMessage.classList.add('text-red-400');
-            } finally {
-                submitButton.disabled = false; // Re-enable button
-                submitButton.textContent = 'Add Me to List';
-                setTimeout(() => {
-                    formMessage.classList.add('hidden'); // Hide message after a few seconds
-                }, 5000);
-            }
-        });
-    </script>
+
+
+
+
+  <section id="join-us" class="py-16 px-4">
+      <h2 class="text-4xl font-bold mb-6 text-center text-indigo-300">Join Our Community!</h2>
+      <p class="font-bold mb-6 text-center text-indigo-300">Unlock your potential. Connect, learn, and grow with us!</p>
+
+
+
+
+      <div class="join-us-container">
+          <div class="event-poster">
+              <img src="poster.jpeg" alt="EVENT POSTER">
+              <div class="flex flex-wrap justify-center mt-4">
+                  <a href="https://chat.whatsapp.com/DSwyvm54skoFgMMTqswKG5?mode=ac_t" target="_blank" class="social-link">
+                      <i class="fab fa-whatsapp"></i> WhatsApp
+                  </a>
+                  <a href="https://www.linkedin.com/company/internships-and-career-opportunities-club" target="_blank" class="social-link">
+                      <i class="fab fa-linkedin"></i> LinkedIn
+                  </a>
+              </div>
+          </div>
+          <div class="join-us-form">
+              <p class="text-xl font-semibold mb-4 text-indigo-200">Quick Sign-Up for Updates:</p>
+              <form id="signup-form">
+                  <input type="text" id="name" name="name" placeholder="Your Name" required class="focus:outline-none focus:ring-2 focus:ring-amber-400">
+                  <input type="text" id="idnum" name="idnumber" placeholder="ID NUMBER" required class="focus:outline-none focus:ring-2 focus:ring-amber-400">
+                  <select id="branch" name="branch" required class="focus:outline-none focus:ring-2 focus:ring-amber-400">
+                      <option value="">Select Your Branch</option>
+                      <option value="CSE">CSE</option>
+                      <option value="ECE">ECE</option>
+                      <option value="EEE">EEE</option>
+                      <option value="Civil">Civil</option>
+                      <option value="Mechanical">Mechanical</option>
+                  </select>
+                  <input type="number" id="year" name="year" placeholder="Your Year (e.g., 1 or 2)" min="1" max="4" required class="focus:outline-none focus:ring-2 focus:ring-amber-400">
+                  <input type="email" id="email" name="email" placeholder="Your Email Address" required class="focus:outline-none focus:ring-2 focus:ring-amber-400">
+                  <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required class="focus:outline-none focus:ring-2 focus:ring-amber-400">
+                  <button type="submit">Add Me to List</button>
+              </form>
+              <div id="form-message" class="mt-4 text-center text-lg font-semibold hidden"></div>
+          </div>
+      </div>
+  </section>
+
+
+
+
+  <footer class="footer-section">
+      <p>Still Confused? Visit Our Stall at Udhaan — We'll Guide You!</p>
+      <p class="mt-2 text-sm text-slate-500">&copy; 2025 Internships & Career Opportunities Club. All rights reserved.</p>
+  </footer>
+
+
+
+
+  <script>
+      //function to scroll bottom
+      function scrollToSection() {
+          const targetElement = document.getElementById("join-us");
+          if (targetElement) {
+              window.scrollTo({
+                  top: targetElement.offsetTop,
+                  behavior: 'smooth'
+              });
+          }
+      }
+      // JavaScript for PDF download and form submission
+      const roadmapLinks = {
+          'CSE': 'https://drive.google.com/uc?export=download&id=11Uk5BigwDmtfQ1E-0ky_7VYAP_33VksW',
+          'ECE': 'https://drive.google.com/uc?export=download&id=1fVddMiF5xPWr-XCKmGGt7jttvGq75aBi',
+          'EEE': 'https://drive.google.com/uc?export=download&id=1GCicrtCdLgHpPiSpo2_AJ1cy_5AK4Oma',
+          'Civil': 'https://drive.google.com/uc?export=download&id=1lSzhuUtmio_1Puw1oe81FJkxkQX5gFQV',
+          'Mechanical': 'https://drive.google.com/uc?export=download&id=1h8dXy0FTHNPI6P5NukbWOW25xhAGv16F',
+      };
+
+
+
+
+      /**
+       * Downloads the career roadmap PDF for the selected stream.
+       * @param {string} stream - The stream for which to download the roadmap.
+       */
+      function downloadRoadmap(stream) {
+          const pdfUrl = roadmapLinks[stream];
+          if (pdfUrl) {
+              // Create a temporary anchor element to trigger download
+              const a = document.createElement('a');
+              a.href = pdfUrl;
+              a.download = `${stream}_Career_Roadmap.pdf`; // Suggested filename
+              document.body.appendChild(a);
+              a.click();
+              document.body.removeChild(a);
+              console.log(`Downloading roadmap for ${stream} from: ${pdfUrl}`);
+              // You could also show a small message to the user here
+          } else {
+              console.error(`Roadmap not found for ${stream}`);
+              // In a real app, use a custom modal for user feedback
+              alert('Roadmap not available for this stream yet. Please visit our stall!');
+          }
+      }
+
+
+
+
+    
+      const signupForm = document.getElementById('signup-form');
+      const formMessage = document.getElementById('form-message');
+
+
+
+
+      // PASTE YOUR DEPLOYED WEB APP URL HERE
+      const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxoHLsT7HxUav0HmkcVngEpycsinHibiUCTWsc2xez6ikS_doBiOazv8GuzpiOCCD29tQ/exec';
+
+
+
+
+      signupForm.addEventListener('submit', async function(event) {
+          event.preventDefault(); // Prevent default form submission
+
+
+
+
+          formMessage.classList.add('hidden'); // Hide any previous messages
+          formMessage.classList.remove('text-red-400', 'text-emerald-400'); // Reset colors
+
+
+
+
+          const submitButton = this.querySelector('button[type="submit"]');
+          submitButton.disabled = true; // Disable button during submission
+          submitButton.textContent = 'Submitting...';
+
+
+
+
+          const formData = new FormData(this);
+
+
+
+
+          try {
+              const response = await fetch(SCRIPT_URL, {
+                  method: 'POST',
+                  body: formData,
+                  redirect: 'follow' // Important for Apps Script deployments
+              });
+
+
+
+
+              const result = await response.json();
+
+
+
+
+              if (result.result === 'success') {
+                  formMessage.textContent = 'Thanks for showing interest! We\'ll be in touch!';
+                  formMessage.classList.remove('hidden');
+                  formMessage.classList.add('text-emerald-400');
+                  signupForm.reset(); // Clear the form on success
+              } else {
+                  console.error('Submission error:', result.error);
+                  formMessage.textContent = 'Oops! Something went wrong. Please try again.';
+                  formMessage.classList.remove('hidden');
+                  formMessage.classList.add('text-red-400');
+              }
+          } catch (error) {
+              console.error('Network or fetch error:', error);
+              formMessage.textContent = 'Network error. Please check your connection or try again later.';
+              formMessage.classList.remove('hidden');
+              formMessage.classList.add('text-red-400');
+          } finally {
+              submitButton.disabled = false; // Re-enable button
+              submitButton.textContent = 'Add Me to List';
+              setTimeout(() => {
+                  formMessage.classList.add('hidden'); // Hide message after a few seconds
+              }, 5000);
+          }
+      });
+
+
+
+
+      const discoverItems = document.querySelectorAll('.discover-item'); // Select discover items
+  const detailOverlay = document.getElementById('detailOverlay');
+  const closeDetailOverlayBtn = document.getElementById('closeDetailOverlay');
+  const detailTitle = document.getElementById('detailTitle');
+  const detailImage = document.getElementById('detailImage');
+  const detailDescription = document.getElementById('detailDescription');
+  const detailVideo = document.getElementById('detailVideo');
+
+
+
+
+  // Data for the discover item details (replace with your actual content)
+  const discoverDetailsData = {
+      "linkedin-profile": {
+          name: "LinkedIn Corner: Build Your Professional Profile",
+          instructions: "Learn how to build a strong LinkedIn profile and get guidance on professional networking and opportunities.",
+       //    image: "https://via.placeholder.com/600x400/1E293B/E2E8F0?text=LinkedIn+Profile",
+       //    video: "https://www.youtube.com/embed/dQw4w9WgXcQ" // Example LinkedIn tutorial video
+      },
+      "resume-portfolio": {
+          name: "Career Portal",
+          instructions: "Access curated roadmaps, resources, and listings for internships and career opportunities through our dedicated website.",
+       //    image: "https://via.placeholder.com/600x400/1E293B/E2E8F0?text=Resume+Portfolio",
+       //    video: "https://www.youtube.com/embed/dQw4w9WgXcQ" // Example Resume tips video
+      },
+      "career-kits": {
+          name: "1:1 Live Guidance",
+          instructions:"Receive personalized, real-time advice from our mentors to help you make informed career decisions.",
+       //    image: "https://via.placeholder.com/600x400/1E293B/E2E8F0?text=Career+Starter+Kit",
+       //    video: "" // No video for this item
+      },
+      "internship-portals": {
+          name: "Ongoing Career Support",
+          instructions: "Stay on track with regular career guidance, updates, and support from our club team.",
+       //    image: "https://via.placeholder.com/600x400/1E293B/E2E8F0?text=Internship+Portals",
+       //    video: "https://www.youtube.com/embed/dQw4w9WgXcQ" // Example Internship search guide
+      }
+  };
+
+
+
+
+  // Function to open the generic detail overlay
+  function openDetailOverlay(data) {
+      detailTitle.textContent = data.name;
+      detailDescription.innerHTML = data.instructions; // Changed to innerHTML to render HTML tags
+
+
+
+
+    
+      detailImage.src = data.image || '';
+      detailImage.alt = data.name + " Image";
+      detailImage.style.display = data.image ? 'block' : 'none'; // Hide if no image
+
+
+
+
+      detailVideo.src = data.video || '';
+      detailVideo.parentElement.style.display = data.video ? 'block' : 'none'; // Hide video container if no video
+
+
+
+
+      detailOverlay.classList.add('active');
+  }
+
+
+
+
+  // Add event listeners for Discover Items
+  discoverItems.forEach(item => {
+      item.addEventListener('click', () => {
+          const discoverId = item.dataset.discover;
+          const data = discoverDetailsData[discoverId];
+          if (data) {
+              openDetailOverlay(data);
+          }
+      });
+  });
+
+
+
+
+  // Event listeners for closing the generic detail overlay
+  closeDetailOverlayBtn.addEventListener('click', () => {
+      detailOverlay.classList.remove('active');
+      detailVideo.src = ""; // Stop the video when closing
+  });
+
+
+
+
+  detailOverlay.addEventListener('click', (e) => {
+      if (e.target === detailOverlay) { // Check if click is on the overlay background
+          detailOverlay.classList.remove('active');
+          detailVideo.src = ""; // Stop the video when clicking outside
+      }
+  });
+
+
+
+
+  document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && detailOverlay.classList.contains('active')) {
+          detailOverlay.classList.remove('active');
+          detailVideo.src = ""; // Stop the video when pressing Esc
+      }
+  });
+  </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
