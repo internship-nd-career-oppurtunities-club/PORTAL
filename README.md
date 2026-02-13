@@ -82,7 +82,7 @@ This digital portal guarantees that the Udaan experience lives on long after the
 
 ![Stall Discoveries & Offerings](./images/discoveries.png)
 
-![Interactive Game Zone](./images/game_zone.png)
+<!-- ![Interactive Game Zone](./images/game_zone.png) -->
 
 ![Community Join Form](./images/join_form.png)
 
