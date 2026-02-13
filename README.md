@@ -74,8 +74,6 @@ This digital portal guarantees that the Udaan experience lives on long after the
 
 ## 📸 6. Screenshots Section
 
-*(Replace these placeholder links with actual screenshots of your running portal once they are ready)*
-
 ![Hero & Introduction](./images/hero_section.png)
 
 ![Downloadable Career Roadmaps](./images/roadmaps.png)
