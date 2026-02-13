@@ -72,7 +72,7 @@ This digital portal guarantees that the Udaan experience lives on long after the
 
 ---
 
-## 📸 6. Screenshots Section
+## 📸 6. Screenshots
 
 ![Hero & Introduction](./images/hero_section.png)
 
